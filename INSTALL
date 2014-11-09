@@ -1,0 +1,88 @@
+Installing LibAmpl
+
+Requirements: - The bash shell,
+              - A C compiler
+
+
+I. Installation:
+
+ 1. Uncompress the LibAmpl archive in a fresh directory.
+    Below, this directory is referred to as $LIBAMPLDIR.
+
+ 2. If need be, edit $LIBAMPLDIR/Arch/[Linux|Mac]/makedefs-cpp
+    to reflect your environment.
+
+ 3. From $LIBAMPLDIR, type 'make'.
+    If running OSX, you're done. Otherwise, continue to step 4.
+
+ 4. Add $LIBAMPLDIR/Lib to your $LD_LIBRARY_PATH so
+    other programs can use the shared AMPL library.
+
+
+II. Testing:
+
+ A simple way to test your installation of libampl is to try out the `miniampl` 
+ driver. You can download it using:
+
+     git clone git://github.com/dpo/miniampl.git
+
+
+III. How to use a compiler other than gcc:
+
+ Let's say that you want to build LibAmpl with the fictitious
+ xtc C compiler.
+
+ By default, LibAmpl is built with gcc. To let the build
+ mechanism know about xtc, change to $LIBAMPLDIR/Arch/[Linux|Mac],
+ copy makedefs-gcc to makedefs-xtc and edit makedefs-xtc to
+ reflect your compiler name and command-line options. The
+ resulting file may be as simple as
+
+
+  CXX           = xtc
+  CXX_WRN_FLGS = -Wall
+  CXX_DYN_FLGS = -fPIC
+  CXX_SHAR_LIB = -shared
+  CXX_OPT_FLGS = -O
+  CXX_DBG_FLGS = -g
+  CXX_PRF_FLGS = -p
+
+
+ Consult your compiler documentation for the proper flags.
+
+ Next, create a symbolic link in $LIBAMPLDIR/Arch/[Linux|Mac]
+ called makedefs-cpp that points to your new definitions file:
+
+   makedefs-cpp -> makedefs-xtc
+
+ Now LibAmpl wil choose makedefs-cpp by default. Change to
+ $LIBAMPLDIR and, at the shell prompt, say:
+
+  $ make mrclean ; make
+
+ You should be ready to go.
+
+ If you add several compiler definitions for LibAmpl, you can
+ ensure that the correct compiler will be used by having the
+ symbolic link makedefs-cpp point to the definitions file of
+ your choice.
+
+
+III. Contributions, bug fixes, suggestions
+
+ If you
+
+  o  add compiler definition files for one of the currently
+     supported platforms,
+  o  add an initial definitions file for a new platform,
+  o  find a bug (and possibly have a fix for it),
+  
+ please contribute it to LibAmpl by e-mailing your files to
+ 
+  dominique.orban@gerad.ca
+
+
+Enjoy!
+Dominique Orban
+dominique.orban@gerad.ca
+Montreal, January 2007.

@@ -1,0 +1,22 @@
+LibAmpl
+=======
+
+LibAmpl is a simple set of files used to build a shared library
+from the AMPL Library source files. This shared library can then
+be used with a variety of software. Current software projects
+using LibAmpl include
+
+ o   nlpy     http://nlpy.sf.net
+ o   DrAmpl   http://www.gerad.ca/~orban/drampl
+ o   MiniAmpl http://github.com/dpo/miniampl
+
+To report problems with LibAmpl please e-mail dominique.orban@gerad.ca
+
+See the INSTALL file for installation directions.
+
+If you are running OSX, make sure you read Readme.macosx!
+
+Enjoy!
+Dominique Orban
+dominique.orban@gerad.ca
+Montreal, January 2007

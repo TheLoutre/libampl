@@ -27,3 +27,9 @@
 *.i*86
 *.x86_64
 *.hex
+*~
+
+# Output dir
+Lib
+# Netlib source, unclear licence
+Src/solvers

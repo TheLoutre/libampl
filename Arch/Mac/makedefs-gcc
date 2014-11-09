@@ -1,0 +1,15 @@
+###############################################################################
+##               Customize the settings below to reflect your local environment
+###############################################################################
+
+########### C/C++ compiler settings ###########################################
+
+CXX           = gcc -std=c99 -arch x86_64 -mmacosx-version-min=10.5
+CXX_WRN_FLGS = -Wall -Wstrict-prototypes
+CXX_DYN_FLGS = -fno-strict-aliasing -fPIC -fno-common -dynamic 
+CXX_SHAR_LIB = -dynamiclib -undefined dynamic_lookup -install_name $@
+CXX_OPT_FLGS = -O
+CXX_DBG_FLGS = -g
+CXX_PRF_FLGS = -p
+
+###############################################################################

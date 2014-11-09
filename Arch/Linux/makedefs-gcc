@@ -1,0 +1,15 @@
+###############################################################################
+##               Customize the settings below to reflect your local environment
+###############################################################################
+
+########### C/C++ compiler settings ###########################################
+
+CXX           = gcc
+CXX_WRN_FLGS = -Wall -Wstrict-prototypes
+CXX_DYN_FLGS = -pthread -fPIC -fno-strict-aliasing
+CXX_SHAR_LIB = -shared
+CXX_OPT_FLGS = -O3
+CXX_DBG_FLGS = #-g
+CXX_PRF_FLGS = #-p
+
+###############################################################################

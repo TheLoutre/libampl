@@ -1,0 +1,27 @@
+#!/bin/sh
+# Download and unpack the AMPL Library from NetLib
+if [ -d solvers ]; then
+  echo '  You seem to already have the AMPL Library.'
+  echo '  Download again Y/N? (N)'
+  read again
+  [[ "$again" == 'y' ]] && again='Y'
+  [[ "$again" != 'Y' ]] && again='N'
+fi
+
+if [ "$again" != 'N' ]; then
+  rm -f solvers.tar
+  rm -rf solvers
+  if [ "`which curlxxxx`" != "" ]; then
+    curl --progress-bar -u anonymous:joe@example.com -O ftp://www.netlib.org/ampl/solvers.tar.gz
+    tar zxvf solvers.tar.gz
+    rm -f solvers.tar.gz
+  elif [ "`which rsync`" != "" ]; then
+    rsync -avz netlib.org::netlib/ampl/solvers .
+  elif [ "`which wget`" != "" ]; then
+    wget ftp://www.netlib.org/ampl/solvers.tar.gz
+    tar zxvf solvers.tar.gz
+    rm solvers.tar.gz
+  else
+    echo 'You need curl, rsync or wget for this operation'
+  fi
+fi
