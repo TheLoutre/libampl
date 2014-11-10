@@ -34,7 +34,7 @@ all:
 	if [ ! -d solvers ]; then \
 		echo ; echo "Fetching AMPL Library source code ..." ; echo ; \
 	fi ; \
-	sh ./get_ampl_library ; \
+	sh ./get_ampl_library --force; \
 	echo ; echo "Building AMPL Library ..." ; echo ; \
 	cd $(AMPLSOLVERS) ; \
 	$(MAKECMD) -f $(LIBAMPLHOME)/Src/Makefile $(MAKEOPTIONS) arith.h libampl.$(SOEXT) libfuncadd0.$(SOEXT) ; \
