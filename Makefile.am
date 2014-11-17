@@ -1,0 +1,1 @@
+SUBDIRS = libampl/src libampl

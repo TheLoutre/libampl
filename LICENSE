@@ -1,5 +1,6 @@
     LibAmpl --- A build process for shared AMPL Library
     Copyright (C) 2005  Dominique Orban.
+    Copyright (C) 2014  The Loutre.
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -19,3 +20,5 @@
     Ecole Polytechnique de Montreal
     Department of Mathematics and Industrial Engineering
     Montreal QC, Canada
+    ========
+    The Loutre, https://github.com/TheLoutre

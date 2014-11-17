@@ -29,7 +29,30 @@
 *.hex
 *~
 
-# Output dir
-Lib
+# Autotools stuff
+autom4te.cache*
+configure
+Makefile
+config.guess
+config.log
+config.status
+config.sub
+depcomp
+install-sh
+libtool
+ltmain.sh
+missing
+aclocal.m4
+m4/libtool.m4
+m4/lt*m4
+Makefile.in
+compile
+\#configure\#
+.deps*
+.cache
+.cache+
+.depend
+.libs
+
 # Netlib source, unclear licence
-Src/solvers
+libampl/src/solvers
