@@ -15,9 +15,8 @@ done
 # Download and unpack the AMPL Library from NetLib
 if [ -d solvers -a $force -eq 0 ]; then
   echo '  You seem to already have the AMPL Library.'
-  echo '  Download again Y/N? (N)'
-  read again
-  [ "$again" != 'y' ] && exit 0
+  echo '  Exiting gracefully. Add -f to script to force download.'
+  exit 0
 fi
 
 rm -rf solvers
