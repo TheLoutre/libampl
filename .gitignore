@@ -54,5 +54,13 @@ compile
 .depend
 .libs
 
+# Debian packaging
+debian/libampl-dev
+debian/libampl1
+debian/files
+build-stamp
+*.substvars
+*.debhelper.log
+
 # Netlib source, unclear licence
 libampl/src/solvers

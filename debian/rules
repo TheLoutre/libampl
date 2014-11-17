@@ -18,9 +18,12 @@ else
 	CFLAGS += -O2
 endif
 
-config.status: configure
+configure:
 	dh_testdir
 	sh autogen.sh
+
+config.status: configure
+	dh_testdir
 	./configure --host=$(DEB_HOST_GNU_TYPE) --build=$(DEB_BUILD_GNU_TYPE) \
 		--prefix=/usr CFLAGS="$(CFLAGS)" LDFLAGS="$(LDFLAGS)"
 
@@ -39,7 +42,7 @@ clean:
 	dh_testdir
 	dh_testroot
 	rm -f build-stamp
-	$(MAKE) clean
+	$(MAKE) clean || true
 	rm -f config.h config.log config.make config.status
 	dh_clean
 
@@ -67,5 +70,5 @@ binary-arch: build install
 	dh_builddeb
 
 binary: binary-indep binary-arch
-.PHONY: build clean binary-indep binary-arch binary install
+.PHONY: build clean binary-indep binary-arch binary install configure
 
