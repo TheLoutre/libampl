@@ -52,6 +52,7 @@ install: build
 	dh_prep
 	dh_installdirs
 	$(MAKE) install DESTDIR=$(CURDIR)/debian/libampl1
+	mkdir -p debian/libampl-dev/usr/include
 	install -D -m 644 libampl/src/solvers/*.h -t debian/libampl-dev/usr/include
 
 binary-indep:
